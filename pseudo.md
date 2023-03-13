@@ -28,17 +28,15 @@ A fixed-size etch-a-sketch which the user can draw on when they hold down their 
  - draw(color: string, isRainbow: boolean default=false)
    - if color = (some color) : draw with that color; 
    - else if isRainbow = true : CALL rainbowColors() on each new grid square being drawn on
- - clearCanvas()
-   - Re-initializes (i.e. clear) the canvas, applying the pixel size currently selected on the L dial
+ - clearCanvas(): Re-initializes (i.e. clear) the canvas, applying the pixel size currently selected on the L dial
  - openColorPicker()
- - setPenColor(color: string)
- - rainbowColors()
-   - Set random color for each new grid square being dragged over
+ - setPenColor(color: string):  Sets the color of the pen, and triggers matchOtherElsToPenColor()
+ - matchOtherElsToPenColor():  Changes the color of the R dial and the labels around the L dial to match the currently selected pen color.
+ - rainbowColors():  Set random color for each new grid square being dragged over
  - changeColorOfDialSurface()
- - cursorStyle()
-   - When cursor is over off the canvas: it's a normal arrow cursor shape
+ - cursorStyle():  When cursor is over off the canvas: it's a normal arrow cursor shape
    - When cursor is over the canvas: it's a '+' shape
- - removeGridLines()
+ - toggleGridLines()
 
 
 ### Overall Steps:
