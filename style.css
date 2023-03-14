@@ -62,12 +62,14 @@ img {
   height: auto;
 }
 
-/* .dial {
+/* DIALS */
+
+.dial {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 78px;
+  height: 78px;
   border-radius: 50%;
-  background-color: #ccc;
+  background-color: rgb(247, 240, 240);
 }
 
 .dial-handle {
@@ -90,7 +92,9 @@ img {
   width: 2px;
   height: 15px;
   background-color: #000;
-} */
+}
+
+/* FRAME */
 
 #frame-cont {
   display: flex;
@@ -112,8 +116,10 @@ img {
   margin-bottom: 100px;
   border-radius:10%;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  box-shadow: 1 2 10px rgba(0, 0, 0, 0.9);
 }
+
+/* CANVAS */
 
 #canvas {
   display: flex;
@@ -121,12 +127,39 @@ img {
   height: 80%;
   width: 80%;
   background-color: rgb(241, 237, 237);
-  box-shadow: inset 0 0 10px 5px rgba(7, 3, 3, 0.9);
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 10px 10px rgba(7, 3, 3, 0.9);
+  box-shadow: 0 0 10px 5px rgba(13, 10, 10, 0.4);
 }
 
 .gs {
-  flex-basis: 0;
+  flex-basis: 1;
   flex-grow: 1;
-  background-color: bisque;
+  flex-shrink: 0;
+  background-color: rgb(251, 244, 235);
+}
+
+/* CONTROLS */
+
+#controls-sect {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  width: 85%;
+  height: 16%;
+}
+
+#reset-btn-cont {
+  width: 90px;
+  height: 40px;
+}
+
+#reset-btn {
+  background-color:azure;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+  border-radius: 25%;
 }

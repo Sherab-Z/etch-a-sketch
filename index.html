@@ -16,21 +16,27 @@
         </section>
         <section id="canvas"></section>
 
-        <section id="controls" class="controls">
+        <section id="controls-sect" class="controls">
           <div id="left-dial-cont" class="left control container">
-            <!-- TODO: Use CSS Grid to create dials and their labels -->
+            <div id="l-dial" class="left dial">
+              <div class="left dial-handle"></div>
+              <div class="left dial-mark" data-angle="0"></div>
+              <div class="left dial-mark" data-angle="90"></div>
+              <div class="left dial-mark" data-angle="180"></div>
+              <div class="left dial-mark" data-angle="270"></div>
+            </div>
           </div>
-          <div id="clear-btn-cont" class="reset btn middle container">
-            <button id="clear-btn" class="btn">Reset</button>
+          <div id="reset-btn-cont" class="reset btn middle container">
+            <button type="button" id="reset-btn" class="btn">Reset</button>
           </div>
           <div id="r-dial-cont" class="right control container">
-            <!-- <div id="r-dial" class="right dial">
-              <div class="r-dial-handle"></div>
-              <div class="r-dial-mark" data-angle="0"></div>
-              <div class="r-dial-mark" data-angle="90"></div>
-              <div class="r-dial-mark" data-angle="180"></div>
-              <div class="r-dial-mark" data-angle="270"></div>
-            </div> -->
+            <div id="r-dial" class="right dial">
+              <div class="right dial-handle"></div>
+              <div class="right dial-mark" data-angle="0"></div>
+              <div class="right dial-mark" data-angle="90"></div>
+              <div class="right dial-mark" data-angle="180"></div>
+              <div class="right dial-mark" data-angle="270"></div>
+            </div>
           </div>
         </section>
       </div>
