@@ -11,6 +11,16 @@ A fixed-size etch-a-sketch which the user can draw on when they hold down their 
 - The middle button re-initializes (i.e. clears) the canvas with the pixel size currently selected on the L dial.
 - When the cursor is off the canvas, it looks like a normal arrow cursor; when over the canvas, it becomes a '+' shape.
 
+### Overall Steps:
+1. [] Basic overall page layout & general text - title, intro, footer text [ HTML + CSS ]
+2. [] Create canvas [ JS + CSS Grid ]
+3. [] Ensure responsiveness [ CSS ]
+4. [] Set-up drawing feature [ JS ]
+5. [] Set-up 'Reset' button feature [ HTML + JS ]
+6. [] Create L & R dials, arrange labels [ HTML + CSS Grid ]
+7. [] Add overall styling [ CSS ]
+8. [] Make dials functional [ JS ]
+9. [] 
 
 ## Pseudocode 
 
@@ -22,7 +32,7 @@ A fixed-size etch-a-sketch which the user can draw on when they hold down their 
 - Mouse drag: on canvas
 - mouse over: canvas vs off-canvas
 
-### List of functions:
+### Functions:
 
  - createNewCanvas(sideSquaresNum: type=number default=16)
  - draw(color: string, isRainbow: boolean default=false)
@@ -37,18 +47,3 @@ A fixed-size etch-a-sketch which the user can draw on when they hold down their 
  - cursorStyle():  When cursor is over off the canvas: it's a normal arrow cursor shape
    - When cursor is over the canvas: it's a '+' shape
  - toggleGridLines()
-
-
-### Overall Steps:
-1. [] Basic overall page layout & general text - title, intro, footer text [ HTML + CSS ]
-2. [] Create canvas [ JS + CSS Grid ]
-3. [] Ensure responsiveness [ CSS ]
-4. [] Set up 'drag' effect for drawing [ JS ]
-5. [] Add clear button [ HTML + JS ]
-6. [] Add L & R dials, with labels [ HTML + CSS ]
-7. [] Add overall styling [ CSS ]
-8. [] Make dials functional [ JS ]
-9. 
-
-
-

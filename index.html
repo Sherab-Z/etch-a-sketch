@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Etch-a-Sketch</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main>
-    <div id="frame" class="container">
-      <section id="title-sect" class="title container">
-        <h1 id="title" class="title heading">Etch-a-Sketch</h1>
-      </section>
-      <section id="canvas-sect"></section>
-    </div>
-    <section id="controls-sect" class="controls">
-      <div id="L-dial-cont" class="container">
-        <!-- TODO: Use CSS Grid to create dials and their labels -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div id="frame-cont" class="container">
+      <div id="frame" class="frame">
+        <section id="title-sect" class="title container">
+          <h1 id="title" class="title heading">Etch-a-Sketch</h1>
+        </section>
+        <section id="canvas"></section>
+
+        <section id="controls" class="controls">
+          <div id="left-dial-cont" class="left control container">
+            <!-- TODO: Use CSS Grid to create dials and their labels -->
+          </div>
+          <div id="clear-btn-cont" class="reset btn middle container">
+            <button id="clear-btn" class="btn">Reset</button>
+          </div>
+          <div id="r-dial-cont" class="right control container">
+            <!-- <div id="r-dial" class="right dial">
+              <div class="r-dial-handle"></div>
+              <div class="r-dial-mark" data-angle="0"></div>
+              <div class="r-dial-mark" data-angle="90"></div>
+              <div class="r-dial-mark" data-angle="180"></div>
+              <div class="r-dial-mark" data-angle="270"></div>
+            </div> -->
+          </div>
+        </section>
       </div>
-      <div id="clear-btn-cont" class="btm btn container">
-        <button id="clear-btn" class="btn">Reset</button>
-      </div>
-      <div id="R-dial-cont" class="btm container">
-        <!-- TODO: Use CSS Grid to create dials and their labels -->
-      </div>
-    </section>
-  </main>
-  <footer>
-      <p class="footer-txt txt"></p>
-  </footer>
-  <script src="./script.js"></script>
-</body>
+    </main>
+    <footer>
+      <p class="footer-txt txt">copyright Sherab @WholeTreeDev</p>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>
