@@ -70,6 +70,7 @@ img {
   height: 78px;
   border-radius: 50%;
   background-color: rgb(247, 240, 240);
+  box-shadow: 1 2 10px 10px rgba(0, 0, 0, 0.9);
 }
 
 .dial-handle {
@@ -111,7 +112,6 @@ img {
   width: 50vw;
   min-width: 350px;
   background-color: red;
-  z-index: -1;
   margin-top: 100px;
   margin-bottom: 100px;
   border-radius:10%;
@@ -162,4 +162,5 @@ img {
   width: 100%;
   height: 100%;
   border-radius: 25%;
+  box-shadow: inset 0 0 4px 2px rgba(7, 3, 3, 0.5);
 }

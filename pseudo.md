@@ -34,10 +34,10 @@ A fixed-size etch-a-sketch which the user can draw on when they hold down their 
 
 ### Functions:
 
- - [x] createNewCanvas(sideSquaresNum: type=number default=16)
- - [] draw(color: string, isRainbow: boolean default=false)
-   - if color = (some color) : draw with that color; 
-   - else if isRainbow = true : CALL rainbowColors() on each new grid square being drawn on
+ - [BUG] createNewCanvas(sideSquaresNum: type=number default=16)
+ - [x] draw(color: string)
+   - if color = (some color) : apply that color to canvas; 
+   - else if color = isRainbow : apply random color to canvas
  - [] clearCanvas(): Re-initializes (i.e. clear) the canvas, applying the pixel size currently selected on the L dial
  - [] openColorPicker()
  - [] setPenColor(color: string):  Sets the color of the pen, and triggers matchOtherElsToPenColor()

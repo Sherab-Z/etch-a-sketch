@@ -1,23 +1,72 @@
-
+const settingsObj = {
+  penColor: "black",
+  canvasGridSideLength: 16,
+};
 
 function createNewCanvas(sideSquaresNum = 16) {
-  const canvas = document.getElementById('canvas');
+  console.log("FUNC CALL: createNewCanvas()");
+  const canvas = document.getElementById("canvas");
 
-  for (let i = 0; i < (sideSquaresNum ** 2); i++) {
-    const gs = document.createElement('div');
-    gs.className = 'gs';
+  for (let i = 0; i < sideSquaresNum ** 2; i++) {
+    const gs = document.createElement("div");
+    gs.className = "gs";
     gs.style.width = `calc(100% / ${sideSquaresNum})`;
     gs.style.height = `calc(100% / ${sideSquaresNum})`;
     canvas.appendChild(gs);
   }
 }
 
-function draw(color='black', isRainbow=false) {
-  
+function drawOnCanvas() {
+  console.log("FUNC CALL: drawOnCanvas()");
+
+  let isMouseDown = false;
+  console.log(`isMouseDown ${isMouseDown}`);
+
+  // Mousemove handler function
+  const mousemoveHandler = function (event) {
+    console.log("func EVENT: drawOnCanvas() > mousemove");
+
+    // Check if the mouse button is currently down and the cursor is over a .gs div
+    if (isMouseDown && event.target.classList.contains("gs")) {
+      console.log("func EVENT: drawOnCanvas() > mousemove ACTIVE");
+
+      event.target.style.backgroundColor = settingsObj.penColor; // Change the color to the currently set pen color in the settingsObj
+    }
+  };
+
+  // Set up event listener for mousedown event
+  document.addEventListener("mousedown", function (event) {
+    console.log("func EVENT: drawOnCanvas() > mousedown");
+    // Check if the clicked element has class .gs
+    if (event.target.classList.contains("gs")) {
+      isMouseDown = true;
+      console.log(`isMouseDown = ${isMouseDown}`);
+
+      event.target.style.backgroundColor = settingsObj.penColor; // Change the color to the currently set pen color in the settingsObj object
+
+      // Set up event listener for mousemove event
+      document.addEventListener("mousemove", mousemoveHandler); // Add the mousemove event listener
+    }
+
+    // Set up event listener for mouseup event
+    document.addEventListener("mouseup", function (event) {
+      console.log("func EVENT: drawOnCanvas() > mouseup");
+
+      isMouseDown = false;
+      console.log(`isMouseDown ${isMouseDown}`);
+
+      document.removeEventListener("mousedown", mousemoveHandler); // Remove the mousemove event listener
+    });
+  });
 }
 
-// Bottom of script
-createNewCanvas();
+// Reinitialize the canvas every time script file is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  createNewCanvas();
+  drawOnCanvas();
+});
+
+// EVENT LISTENERS
 
 // Dial features
 
