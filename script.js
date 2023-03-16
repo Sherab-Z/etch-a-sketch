@@ -6,6 +6,8 @@ const settingsObj = {
 
 //  FUNC: Sets the color of all .gs divs back to the default canvas color.
 function clearCanvas() {
+  console.log("FUNC CALL: clearCanvas()");
+
   const canvasDivs = document.querySelectorAll("div.gs");
   canvasDivs.forEach((div) => {
     div.style.backgroundColor = settingsObj.canvasColor;
@@ -68,7 +70,7 @@ function drawOnCanvas() {
     }
 
     // Set up event listener for mouseup event
-    document.addEventListener("mouseup", function (event) {
+    document.addEventListener("mouseup", function () {
       console.log("func EVENT: drawOnCanvas() > mouseup");
 
       isMouseDown = false;
@@ -79,13 +81,19 @@ function drawOnCanvas() {
   });
 }
 
+
+// EVENT HANDLERS
+
 // Reinitialize the canvas every time script file is loaded
 document.addEventListener("DOMContentLoaded", function () {
   createNewCanvas();
   drawOnCanvas();
 });
 
-// EVENT LISTENERS
+// Clear button
+const clearBtn = document.getElementById("clear-btn");
+
+clearBtn.addEventListener('click', clearCanvas);  // Set background color of each .gs div in the canvas back to default canvas color, which is set in settingsObj
 
 // Dial features
 
