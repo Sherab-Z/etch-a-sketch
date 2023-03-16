@@ -129,6 +129,7 @@ img {
   background-color: rgb(241, 237, 237);
   box-shadow: inset 0 0 10px 10px rgba(7, 3, 3, 0.9);
   box-shadow: 0 0 10px 5px rgba(13, 10, 10, 0.4);
+  cursor:crosshair;
 }
 
 .gs {
@@ -163,4 +164,21 @@ img {
   height: 100%;
   border-radius: 25%;
   box-shadow: inset 0 0 4px 2px rgba(7, 3, 3, 0.5);
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  gap: 30px;
+}
+
+#github-link {
+  height: 1.5em;
+}
+
+.ftr.my-profile-website.link {
+  color: rgb(13, 207, 207);
 }

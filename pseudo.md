@@ -3,14 +3,14 @@
 ## Overview 
 A fixed-size etch-a-sketch which the user can draw on when they hold down their left mouse button and drag their cursor across the canvas. The red frame around the canvas will look like the retro toy with 2 dials and a middle button. Shadow effects where the edges would be raised will give it a more realistic look. 
 
-### Overall Steps:
+### Roadmap:
 1. [x] Basic overall page layout & general text - title, intro, footer text [ HTML + CSS ]
 2. [x] Create canvas [ JS + CSS Flexbox ]
 3. [x] Ensure responsiveness [ CSS ]
-4. [] Set-up drawing feature [ JS ]
-5. [] Set-up 'Reset' button feature [ HTML + JS ]
+4. [x] Set-up drawing feature [ JS ]
+5. [x] Set-up 'Reset' button feature [ HTML + JS ]
 6. [] Create L & R dials, arrange labels [ HTML + CSS Grid ]
-7. [] Add overall styling [ CSS ]
+7. [x] Add overall styling [ CSS ]
 8. [] Make dials functional [ JS ]
 9. [] 
 
@@ -19,22 +19,22 @@ A fixed-size etch-a-sketch which the user can draw on when they hold down their 
 - [] R dial will control the color of the pen. 
 - [] R dial will have 3 settings: black, rainbow-color, and eraser.
 - [] When the user clicks the R button, they can choose any color via a pop-up color picker. 
-- [] The middle button re-initializes (i.e. clears) the canvas with the pixel size currently selected on the L dial.
+- [x] The middle button re-initializes (i.e. clears) the canvas with the pixel size currently selected on the L dial.
 - [] When the cursor is off the canvas, it looks like a normal arrow cursor; when over the canvas, it becomes a '+' shape.
 
 ## Pseudocode 
 
 
 ### Event listeners:
-- [] Mouse click on right dial
-- [] Mouse click on middle button ('Clear')
-- [] Mouse drag: on dials
-- [] Mouse drag: on canvas
-- [] Mouse over: canvas vs off-canvas
+- [x] Mouse click on right dial
+- [x] Mouse click on middle button ('Clear')
+- [x] Mouse drag: on dials
+- [x] Mouse drag: on canvas
+- [x] Mouse over: canvas vs off-canvas
 
 ### Functions:
 
- - [BUG] createNewCanvas(sideSquaresNum: type=number default=16)
+ - [x] createNewCanvas(sideSquaresNum: type=number default=16)
  - [x] draw(color: string)
    - if color = (some color) : apply that color to canvas; 
    - else if color = isRainbow : apply random color to canvas
