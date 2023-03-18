@@ -150,12 +150,12 @@ img {
   height: 16%;
 }
 
-#clear-btn-cont {
+#new-canvas-btn-cont {
   width: 90px;
-  height: 40px;
+  height: 50px;
 }
 
-#clear-btn {
+#new-canvas-btn {
   background-color:azure;
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;

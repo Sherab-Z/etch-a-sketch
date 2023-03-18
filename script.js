@@ -1,3 +1,4 @@
+// Store current state settings of the app
 const settingsObj = {
   canvasColor: "rgb(241, 237, 237)",
   penColor: "black",
@@ -37,6 +38,57 @@ function createNewCanvas(gridSideLength = 16) {
     gs.style.height = gsHeight;
     canvas.appendChild(gs);
   }
+}
+
+// FUNC: Prompt user for pen thickness to be applied to new canvas
+function getPenThickness() {
+  console.log("FUNC CALL: getPenThickness()");
+  // Store the user's input as penThickness
+  const penThickness = prompt(
+    "How thick would you like your pen to be? Type 'fine', 'small', 'medium' or 'large':"
+  );
+
+  const validPenThicknessArr = ["fine", "small", "medium", "large"];
+  console.log(`Input valid?: ${validPenThicknessArr.includes(penThickness)}`);
+
+  if (validPenThicknessArr.includes(penThickness)) {
+    return penThickness;
+  } else {
+    getPenThickness();
+  }
+}
+
+function convertPenThicknessIntoCanvasSideLength(penThickness) {
+  console.log(`FUNC CALL: convertPenThicknessIntoCanvasSideLength(${penThickness})`);
+
+  // Convert penThickness into gridSideLength inside settingsObj, to be used to createNewCanvas
+  switch (penThickness) {
+    case "fine":
+      settingsObj.gridSideLength = 100;
+      return 100;
+      break;
+    case "small":
+      settingsObj.gridSideLength = 84;
+      return 84;
+      break;
+    case "medium":
+      settingsObj.gridSideLength = 64;
+      return 64;
+      break;
+    case "large":
+      settingsObj.gridSideLength = 33;
+      return 33;
+      break;
+    default:
+      throw new Error (
+        `Invalid pen thickness string "${penThickness}". String should be one of 'fine', 'small', 'medium' or 'large'.`);
+  }
+}
+
+function refreshCanvas() {
+  let thicknessChoice = getPenThickness();
+  let sideLen = convertPenThicknessIntoCanvasSideLength(thicknessChoice);
+  createNewCanvas(sideLen);
 }
 
 function drawOnCanvas() {
@@ -81,19 +133,22 @@ function drawOnCanvas() {
   });
 }
 
-
 // EVENT HANDLERS
 
-// Reinitialize the canvas every time script file is loaded
+// Each time the script file is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
+  // Reinitialize the canvas
   createNewCanvas();
   drawOnCanvas();
+  
+  // Add event handlers
+    // 'New Canvas' button:
+    const newCanvasBtn = document.getElementById("new-canvas-btn");
+    newCanvasBtn.addEventListener("click", refreshCanvas);
 });
 
-// Clear button
-const clearBtn = document.getElementById("clear-btn");
 
-clearBtn.addEventListener('click', clearCanvas);  // Set the background color of each .gs div in the canvas back to the default canvas color, which is set in settingsObj.canvasColor
+
+
 
 // Dial features
-

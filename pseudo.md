@@ -22,7 +22,17 @@ A fixed-size etch-a-sketch which the user can draw on when they hold down their 
 - [x] The middle button re-initializes (i.e. clears) the canvas with the pixel size currently selected on the L dial.
 - [] When the cursor is off the canvas, it looks like a normal arrow cursor; when over the canvas, it becomes a '+' shape.
 
-## Pseudocode 
+## Pseudocodes
+
+### Get user choice of pen thickness & convert to grid side length:
+1. Event Listener: User clicks 'New Canvas' button
+2. Call function promptForPenThickness(): Prompt user for pen thickness choice
+3. User enters one of: 'tiny', 'small', 'medium', or 'large' and clicks 'Enter' button
+4. Call convertPenThicknessIntoCanvasSideLength: Convert user string to number of div's (gridSideLength) on each side of the canvas
+5. Call createNewCanvas function with gridSideLength argument
+6. Call setPenColor(clr='black'): Reset pen color to black (default setting)
+7. A new canvas is created with user's choice of 'pen thickness'
+
 
 
 ### Event listeners:
