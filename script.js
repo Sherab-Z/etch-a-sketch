@@ -51,15 +51,22 @@ function getPenThickness() {
   const validPenThicknessArr = ["fine", "small", "medium", "large"];
   console.log(`Input valid?: ${validPenThicknessArr.includes(penThickness)}`);
 
-  if (validPenThicknessArr.includes(penThickness)) {
+  if (penThickness === null) {
+    return; // User cancelled the prompt, so do nothing
+  } else if (validPenThicknessArr.includes(penThickness)) {
     return penThickness;
   } else {
+    alert(
+      `Invalid entry "${penThickness}". Pen thickness should be one of 'fine', 'small', 'medium' or 'large'.`
+    );
     getPenThickness();
   }
 }
 
 function convertPenThicknessIntoCanvasSideLength(penThickness) {
-  console.log(`FUNC CALL: convertPenThicknessIntoCanvasSideLength(${penThickness})`);
+  console.log(
+    `FUNC CALL: convertPenThicknessIntoCanvasSideLength(${penThickness})`
+  );
 
   // Convert penThickness into gridSideLength inside settingsObj, to be used to createNewCanvas
   switch (penThickness) {
@@ -80,8 +87,9 @@ function convertPenThicknessIntoCanvasSideLength(penThickness) {
       return 33;
       break;
     default:
-      throw new Error (
-        `Invalid pen thickness string "${penThickness}". String should be one of 'fine', 'small', 'medium' or 'large'.`);
+      throw new Error(
+        `Invalid pen thickness string "${penThickness}". String should be one of 'fine', 'small', 'medium' or 'large'.`
+      );
   }
 }
 
@@ -140,15 +148,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Reinitialize the canvas
   createNewCanvas();
   drawOnCanvas();
-  
+
   // Add event handlers
-    // 'New Canvas' button:
-    const newCanvasBtn = document.getElementById("new-canvas-btn");
-    newCanvasBtn.addEventListener("click", refreshCanvas);
+  // 'New Canvas' button:
+  const newCanvasBtn = document.getElementById("new-canvas-btn");
+  newCanvasBtn.addEventListener("click", refreshCanvas);
 });
-
-
-
-
 
 // Dial features
