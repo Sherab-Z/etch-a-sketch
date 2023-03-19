@@ -16,7 +16,7 @@ function clearCanvas() {
 }
 
 // FUNC: Creates and appends a collection of div's to the canvas based on the sideSqursNum param, which determines the number of divs on each side of the canvas. These div's will be rendered as a grid inside the #canvas el using flexbox wrapping
-function createNewCanvas(gridSideLength = 16) {
+function createNewCanvas(gridSideLength=64) {
   // sideSqursNum param is the number of .gs divs that will be on each side of the square canvas
   console.log("FUNC CALL: createNewCanvas()");
 
