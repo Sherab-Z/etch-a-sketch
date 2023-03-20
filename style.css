@@ -139,7 +139,39 @@ img {
   background-color: rgb(251, 244, 235);
 }
 
-/* CONTROLS */
+/* --- CONTROLS --- */
+
+/* PEN SIZE BUTTON */
+#pen-size-btn {
+  background-color:azure;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 4px 2px rgba(7, 3, 3, 0.5);
+}
+
+/* Align Icons */
+.overall.control.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+  width: auto;
+}
+
+.middle.control.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pen-size.icon {
+  background-color: black;
+}
+
 
 #controls-sect {
   display: flex;
@@ -150,12 +182,12 @@ img {
   height: 16%;
 }
 
-#new-canvas-btn-cont {
+#clear-canvas-btn-cont {
   width: 90px;
   height: 50px;
 }
 
-#new-canvas-btn {
+#clear-canvas-btn {
   background-color:azure;
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;

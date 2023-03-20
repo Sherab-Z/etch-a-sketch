@@ -33,6 +33,13 @@ A fixed-size etch-a-sketch which the user can draw on when they hold down their 
 6. Call setPenColor(clr='black'): Reset pen color to black (default setting)
 7. A new canvas is created with user's choice of 'pen thickness'
 
+### Pen Width btn
+1. User clicks 'Pen Width' button
+2. Event Listener: 
+   1. Triggers cyclePenWidths() function to cycle through the 4 available pen widths (default="small": gridSideLength="84")
+   2. Triggers updatePenWidthBtnIcon() function to update the Pen Width icon on the button
+3. Button displays the correct icon for the new pen width
+4. 'Clear Canvas' button only erases strokes on the canvas, keeping the current pen width
 
 
 ### Event listeners:

@@ -2,7 +2,7 @@
 const settingsObj = {
   canvasColor: "rgb(241, 237, 237)",
   penColor: "black",
-  canvasGridSideLength: 16,
+  canvasGridSideLength: 84
 };
 
 //  FUNC: Sets the color of all .gs divs back to the default canvas color.
@@ -22,10 +22,9 @@ function createNewCanvas(gridSideLength=64) {
 
   settingsObj.canvasGridSideLength = gridSideLength; // Update the grid side length value in settingsObj for use by other functions
 
-  // Values to be passed into the for loop below, for creating the canvas grid div's
+  // Values for creating the canvas grid div's
   const canvas = document.getElementById("canvas");
-  const gsWidth = `calc(100% / ${gridSideLength})`;
-  const gsHeight = `calc(100% / ${gridSideLength})`;
+  const gsLen = `calc(100% / ${gridSideLength})`;
 
   // Delete all existing .gs divs inside the #canvas
   canvas.innerHTML = "";
@@ -34,10 +33,38 @@ function createNewCanvas(gridSideLength=64) {
   for (let i = 0; i < gridSideLength ** 2; i++) {
     const gs = document.createElement("div");
     gs.className = "gs";
-    gs.style.width = gsWidth;
-    gs.style.height = gsHeight;
+    gs.style.width = gsLen;
+    gs.style.height = gsLen;
     canvas.appendChild(gs);
   }
+}
+
+function resizePenSizeBtnIcons() {
+  // Get reference to canvas, as these icons will be sized based on its width and height
+  const canvas = document.getElementById("canvas");
+
+  // Get icon div's
+  const fineIcon = document.getElementById("fine-pen-icon");
+  const smallIcon = document.getElementById("small-pen-icon");
+  const mediumIcon = document.getElementById("medium-pen-icon");
+  const largeIcon = document.getElementById("large-pen-icon");
+
+  // Calc side lengths for each pen width
+  fineIconSize = `${canvas.offsetWidth / 100}px`;
+  smallIconSize = `${canvas.offsetWidth / 84}px`;
+  mediumIconSize = `${canvas.offsetWidth / 64}px`;
+  largeIconSize = `${canvas.offsetWidth / 33}px`;
+  
+  // Set size for each icon
+
+  fineIcon.style.width = fineIconSize;
+  fineIcon.style.height = fineIconSize;
+  smallIcon.style.width = smallIconSize;
+  smallIcon.style.height = smallIconSize;
+  mediumIcon.style.width = mediumIconSize;
+  mediumIcon.style.height = mediumIconSize;
+  largeIcon.style.width = largeIconSize;
+  largeIcon.style.height = largeIconSize;
 }
 
 // FUNC: Prompt user for pen thickness to be applied to new canvas
@@ -145,14 +172,16 @@ function drawOnCanvas() {
 
 // Each time the script file is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
-  // Reinitialize the canvas
+  // Reinitialize the canvas and button elements
   createNewCanvas();
+  resizePenSizeBtnIcons();
   drawOnCanvas();
 
   // Add event handlers
   // 'New Canvas' button:
-  const newCanvasBtn = document.getElementById("new-canvas-btn");
-  newCanvasBtn.addEventListener("click", refreshCanvas);
+  const clearCanvasBtn = document.getElementById("clear-canvas-btn");
+  clearCanvasBtn.addEventListener("click", clearCanvas);
 });
 
-// Dial features
+// Call resizePenSizeBtnIcons function whenever the window is resized
+window.addEventListener('resize', resizePenSizeBtnIcons);

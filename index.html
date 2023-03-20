@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="size=device-size, initial-scale=1.0" />
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -17,14 +17,28 @@
         <section id="canvas"></section>
 
         <section id="controls-sect" class="controls">
-          <div id="left-dial" class="left control container">
-            
+          <div id="left-btn-cont" class="left overall control container">
+            <div id="large-pen-icon" class="pen-size icon"></div>
+            <div class="left middle control container">
+              <div id="medium-pen-icon" class="pen-size icon"></div>
+              <div id="pen-size-dial" class="pen-size dial">
+                <div id="size-dial-marker" class="pen-size dial marker"></div>
+              </div>
+              <div id="fine-pen-icon" class="pen-size icon"></div>
+            </div>
+            <div id="small-pen-icon" class="pen-size icon"></div>
           </div>
-          <div id="new-canvas-btn-cont" class="new-canvas btn middle container">
-            <button type="button" id="new-canvas-btn" class="btn">Refresh Canvas</button>
+          <div id="clear-canvas-btn-cont" class="clear-canvas btn middle container">
+            <button type="button" id="clear-canvas-btn" class="btn">Clear Canvas</button>
           </div>
-          <div id="r-dial-cont" class="right control container">
-            
+          <div id="right-btn-cont" class="right overall control container">
+            <div id="" class="pen-color icon"></div>
+            <div class="right middle control container">
+              <div id="" class="pen-color icon" ></div>
+              <button type="button" class="pen-color btn" id="pen-color-btn">Pen Size</button>
+              <div id="" class="pen-color icon"></div>
+            </div>
+            <div id="" class="pen-color icon"></div>
           </div>
         </section>
       </div>
