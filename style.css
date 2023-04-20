@@ -62,6 +62,30 @@ img {
   height: auto;
 }
 
+/* PAGE SIZE */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow: auto;
+  background-color: rgb(166, 221, 247);
+}
+
+main {
+  height: 90vh;
+}
+
+main #frame {
+  height: 70vh;
+  width: 70vh;
+}
+
+footer {
+  height: 10vh;
+}
+
 /* DIALS */
 
 .dial {
@@ -180,5 +204,5 @@ footer {
 }
 
 .ftr.my-profile-website.link {
-  color: rgb(13, 207, 207);
+  color: rgb(0, 96, 106);
 }
