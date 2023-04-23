@@ -3,6 +3,8 @@
 ## Overview
 This is a simple drawing app. Just move your cursor over the squares on the canvas and they'll change color.
 
+#### Link to live version: https://sherab-z.github.io/etch-a-sketch/
+
 ## Technologies
 Built with JavaScript, HTML & CSS
 
